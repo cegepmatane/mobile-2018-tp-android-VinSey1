@@ -1,15 +1,20 @@
 package ca.qc.cgmatane.informatique.todo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import ca.qc.cgmatane.informatique.todo.R;
+import ca.qc.cgmatane.informatique.todo.vue.ModifierTodo;
 
 public class Todo extends AppCompatActivity {
 
@@ -30,6 +35,25 @@ public class Todo extends AppCompatActivity {
                 new int[] {android.R.id.text1, android.R.id.text2});
 
         vueListeTodo.setAdapter(adapteur);
+
+        vueListeTodo.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View vue, int position, long id) {
+                        ListView vueListeTodo = (ListView) vue.getParent();
+                        HashMap<String, String> todo = (HashMap<String, String>) vueListeTodo.getItemAtPosition((int) position);
+                        position += 1; //Pour que le numéro de Todo soit le bon
+                        Toast message = Toast.makeText(getApplicationContext(), "Todo n°"+ position +"\nDate : "+ todo.get("Date"), Toast.LENGTH_SHORT);
+
+                        message.show();
+
+                        Intent intentionNaviguerModifierTodo = new Intent(Todo.this, ModifierTodo.class);
+
+                        startActivity(intentionNaviguerModifierTodo);
+                    }
+                }
+        );
+
 
     }
 

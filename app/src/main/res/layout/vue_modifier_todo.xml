@@ -4,13 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Todo">
-
-    <ListView
-        android:id="@+id/vue_liste_todo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+    tools:context=".vue.ModifierTodo">
 
 </android.support.constraint.ConstraintLayout>

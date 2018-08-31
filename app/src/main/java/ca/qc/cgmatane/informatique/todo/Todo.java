@@ -10,10 +10,10 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import ca.qc.cgmatane.informatique.todo.donnee.TodoDAO;
 import ca.qc.cgmatane.informatique.todo.vue.AjouterTodo;
 import ca.qc.cgmatane.informatique.todo.vue.ModifierTodo;
 
@@ -22,6 +22,7 @@ public class Todo extends AppCompatActivity {
     protected ListView vueListeTodo;
     protected List<HashMap<String, String>> listeTodo;
     protected Intent intentionNaviguerAjouterTodo;
+    protected TodoDAO accesseurTodo = TodoDAO.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class Todo extends AppCompatActivity {
 
         vueListeTodo = (ListView)findViewById(R.id.vue_liste_todo);
 
-        listeTodo = preparerListeTodo();
+        listeTodo = accesseurTodo.recupererListeTodo();
 
         SimpleAdapter adapteur = new SimpleAdapter(this, listeTodo,
                 android.R.layout.two_line_list_item,
@@ -68,37 +69,5 @@ public class Todo extends AppCompatActivity {
                     }
                 }
         );
-    }
-
-    private List<HashMap<String, String>> preparerListeTodo(){
-        List<HashMap<String, String>> listeTodo = new ArrayList<>();
-        HashMap<String, String> todo;
-
-        todo = new HashMap<String, String>();
-        todo.put("Date", "28/08/2018");
-        todo.put("Description", "Rendre l'échafaud de programmation mobile");
-        listeTodo.add(todo);
-
-        todo = new HashMap<String, String>();
-        todo.put("Date", "30/08/2018");
-        todo.put("Description", "Faire premier objet/action Unreal");
-        listeTodo.add(todo);
-
-        todo = new HashMap<String, String>();
-        todo.put("Date", "04/08/2018");
-        todo.put("Description", "Faire l'interview en anglais");
-        listeTodo.add(todo);
-
-        todo = new HashMap<String, String>();
-        todo.put("Date", "20/12/2018");
-        todo.put("Description", "Finir le DEC");
-        listeTodo.add(todo);
-
-        todo = new HashMap<String, String>();
-        todo.put("Date", "?/?/?");
-        todo.put("Description", "Réussir sa vie");
-        listeTodo.add(todo);
-
-        return listeTodo;
     }
 }

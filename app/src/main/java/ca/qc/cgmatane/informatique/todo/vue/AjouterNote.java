@@ -44,10 +44,10 @@ public class AjouterNote extends AppCompatActivity {
     {
         Note note = new Note(champDate.getText().toString(), champDescription.getText().toString());
         //accesseurNote.ajouterNote(note);
-        naviguerRetourBibliotheque();
+        naviguerRetourTodo();
     }
 
-    public void naviguerRetourBibliotheque()
+    public void naviguerRetourTodo()
     {
         this.finish();
     }

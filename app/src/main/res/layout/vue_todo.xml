@@ -9,14 +9,14 @@
     tools:context=".Todo" >
 
 <ListView
-    android:id="@+id/vue_liste_todo"
+    android:id="@+id/vue_liste_notes"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
 
 <Button
-    android:id="@+id/action_naviguer_ajouter_todo"
+    android:id="@+id/action_naviguer_ajouter_note"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Ajouter un Todo" />
+    android:text="Ajouter une note" />
 
 </LinearLayout>

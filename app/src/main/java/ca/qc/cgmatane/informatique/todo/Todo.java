@@ -13,59 +13,59 @@ import android.widget.Toast;
 import java.util.HashMap;
 import java.util.List;
 
-import ca.qc.cgmatane.informatique.todo.donnee.TodoDAO;
-import ca.qc.cgmatane.informatique.todo.vue.AjouterTodo;
-import ca.qc.cgmatane.informatique.todo.vue.ModifierTodo;
+import ca.qc.cgmatane.informatique.todo.donnee.NoteDAO;
+import ca.qc.cgmatane.informatique.todo.vue.AjouterNote;
+import ca.qc.cgmatane.informatique.todo.vue.ModifierNote;
 
 public class Todo extends AppCompatActivity {
 
-    protected ListView vueListeTodo;
-    protected List<HashMap<String, String>> listeTodo;
-    protected Intent intentionNaviguerAjouterTodo;
-    protected TodoDAO accesseurTodo = TodoDAO.getInstance();
+    protected ListView vueListeNotes;
+    protected List<HashMap<String, String>> listeNotes;
+    protected Intent intentionNaviguerAjouterNote;
+    protected NoteDAO accesseurNote = NoteDAO.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vue_todo);
 
-        vueListeTodo = (ListView)findViewById(R.id.vue_liste_todo);
+        vueListeNotes = (ListView)findViewById(R.id.vue_liste_notes);
 
-        listeTodo = accesseurTodo.recupererListeTodo();
+        listeNotes = accesseurNote.recupererListeNotes();
 
-        SimpleAdapter adapteur = new SimpleAdapter(this, listeTodo,
+        SimpleAdapter adapteur = new SimpleAdapter(this, listeNotes,
                 android.R.layout.two_line_list_item,
                 new String[] {"Date", "Description"},
                 new int[] {android.R.id.text1, android.R.id.text2});
 
-        vueListeTodo.setAdapter(adapteur);
+        vueListeNotes.setAdapter(adapteur);
 
-        vueListeTodo.setOnItemClickListener(
+        vueListeNotes.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View vue, int position, long id) {
-                        ListView vueListeTodo = (ListView) vue.getParent();
-                        HashMap<String, String> todo = (HashMap<String, String>) vueListeTodo.getItemAtPosition((int) position);
-                        position += 1; //Pour que le numéro de Todo soit le bon
-                        Toast message = Toast.makeText(getApplicationContext(), "Todo n°"+ position +"\nDate : "+ todo.get("Date"), Toast.LENGTH_SHORT);
+                        ListView vueListeNotes = (ListView) vue.getParent();
+                        HashMap<String, String> note = (HashMap<String, String>) vueListeNotes.getItemAtPosition((int) position);
+                        position += 1; //Pour que le numéro de la note soit le bon
+                        Toast message = Toast.makeText(getApplicationContext(), "Note n°"+ position +"\nDate : "+ note.get("Date"), Toast.LENGTH_SHORT);
 
                         message.show();
 
-                        Intent intentionNaviguerModifierTodo = new Intent(Todo.this, ModifierTodo.class);
+                        Intent intentionNaviguerModifierNote = new Intent(Todo.this, ModifierNote.class);
 
-                        startActivity(intentionNaviguerModifierTodo);
+                        startActivity(intentionNaviguerModifierNote);
                     }
                 }
         );
 
-        intentionNaviguerAjouterTodo = new Intent( this, AjouterTodo.class);
+        intentionNaviguerAjouterNote = new Intent( this, AjouterNote.class);
 
-        Button actionNaviguerAjouterTodo = (Button)findViewById(R.id.action_naviguer_ajouter_todo);
+        Button actionNaviguerAjouterNote = (Button)findViewById(R.id.action_naviguer_ajouter_note);
 
-        actionNaviguerAjouterTodo.setOnClickListener(
+        actionNaviguerAjouterNote.setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View arg0){
-                        startActivity(intentionNaviguerAjouterTodo);
+                        startActivity(intentionNaviguerAjouterNote);
                     }
                 }
         );

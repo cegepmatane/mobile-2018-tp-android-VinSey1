@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".vue.AjouterTodo" />
-        <activity android:name=".vue.ModifierTodo"></activity>
+        <activity android:name=".vue.AjouterNote" />
+        <activity android:name=".vue.ModifierNote"></activity>
     </application>
 
 </manifest>

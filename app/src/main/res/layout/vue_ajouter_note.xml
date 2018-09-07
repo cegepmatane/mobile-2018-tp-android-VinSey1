@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".vue.AjouterTodo">
+    tools:context=".vue.AjouterNote">
 
     <TextView
-        android:id="@+id/vue_titre_ajouter_todo"
+        android:id="@+id/vue_titre_ajouter_note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Page ajouter todo" />
+        android:text="Page ajouter note" />
 
     <TextView
         android:id="@+id/vue_label_date"
@@ -20,7 +20,7 @@
         android:text="Date" />
 
     <EditText
-        android:id="@+id/vue_ajouter_todo_date"
+        android:id="@+id/vue_ajouter_note_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -33,15 +33,15 @@
         android:text="Description" />
 
     <EditText
-        android:id="@+id/vue_ajouter_todo_description"
+        android:id="@+id/vue_ajouter_note_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/action_enregistrer_todo"
+        android:id="@+id/action_enregistrer_node"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enregistrer le todo" />
+        android:text="Enregistrer la note" />
 </LinearLayout>

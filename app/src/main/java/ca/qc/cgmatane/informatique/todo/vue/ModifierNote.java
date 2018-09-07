@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import ca.qc.cgmatane.informatique.todo.R;
 
-public class ModifierTodo extends AppCompatActivity {
+public class ModifierNote extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.vue_modifier_todo);
+        setContentView(R.layout.vue_modifier_note);
     }
 }

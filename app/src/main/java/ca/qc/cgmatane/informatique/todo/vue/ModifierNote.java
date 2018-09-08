@@ -29,7 +29,7 @@ public class ModifierNote extends AppCompatActivity {
         String parametre_id_note = (String) parametres.get("id_note");
         int id_note = Integer.parseInt(parametre_id_note);
 
-        //note = accesseurNote.trouverNote(id_note);
+        note = accesseurNote.trouverNote(id_note);
 
         champDate = (EditText)findViewById(R.id.vue_modifier_note_date);
         champDescription = (EditText)findViewById(R.id.vue_modifier_note_description);
@@ -58,7 +58,7 @@ public class ModifierNote extends AppCompatActivity {
                 champDescription.getText().toString(),
                 this.note.getId_note());
 
-        //accesseurNote.modifierNote(note);
+        accesseurNote.modifierNote(note);
         naviguerRetourTodo();
     }
 

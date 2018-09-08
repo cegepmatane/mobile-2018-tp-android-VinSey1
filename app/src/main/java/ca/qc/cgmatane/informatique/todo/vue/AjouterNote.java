@@ -43,7 +43,7 @@ public class AjouterNote extends AppCompatActivity {
     private void enregisterNote()
     {
         Note note = new Note(champDate.getText().toString(), champDescription.getText().toString());
-        //accesseurNote.ajouterNote(note);
+        accesseurNote.ajouterNote(note);
         naviguerRetourTodo();
     }
 

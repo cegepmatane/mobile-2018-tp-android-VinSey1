@@ -1,5 +1,7 @@
 package ca.qc.cgmatane.informatique.todo.modele;
 
+import java.util.HashMap;
+
 public class Note {
 
     protected String date;
@@ -39,5 +41,14 @@ public class Note {
 
     public void setId_note(int id_note) {
         this.id_note = id_note;
+    }
+
+    public HashMap<String, String> obtenirNotePourAdapteur()
+    {
+        HashMap<String, String> NotePourAdapteur = new HashMap<String,String>();
+        NotePourAdapteur.put("date", this.date);
+        NotePourAdapteur.put("description", this.description);
+        NotePourAdapteur.put("id_note", "" + this.id_note);
+        return NotePourAdapteur;
     }
 }

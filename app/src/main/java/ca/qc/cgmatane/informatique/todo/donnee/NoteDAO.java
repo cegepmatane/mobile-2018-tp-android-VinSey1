@@ -82,10 +82,4 @@ public class NoteDAO {
         String AJOUTER_NOTE = "Insert INTO note (date, description) VALUES('"+note.getDate()+"', '"+note.getDescription()+"')";
         accesseurBaseDeDonnees.getWritableDatabase().execSQL(AJOUTER_NOTE);
     }
-
-    private void preparerListeNotes() {
-        listeNotes.add(new Note("Android pour les nuls", "Département d'informatique", 1));
-        listeNotes.add(new Note("The Hobbit", "Tolkien", 2));
-        listeNotes.add(new Note("Harry Potter", "J.K.Rowling", 3));
-    }
 }

@@ -51,7 +51,7 @@ public class NoteDAO {
             int id_note = curseur.getInt(indexId_note);
             String date_note = curseur.getString(indexDate);
             String description_date = curseur.getString(indexDescription);
-            note = new Note(description_date, date_note, id_note);
+            note = new Note(date_note, description_date, id_note);
             this.listeNotes.add(note);
         }
         return listeNotes;

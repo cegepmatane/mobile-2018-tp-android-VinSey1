@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".vue.AjouterNote" />
-        <activity android:name=".vue.ModifierNote"></activity>
+        <activity android:name=".vue.ModifierNote" />
+        <receiver android:name=".ReceptionAlarme"></receiver>
     </application>
 
 </manifest>

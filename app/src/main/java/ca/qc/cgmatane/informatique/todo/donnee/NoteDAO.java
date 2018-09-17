@@ -1,5 +1,8 @@
 package ca.qc.cgmatane.informatique.todo.donnee;
 
+import android.app.AlarmManager;
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 
 import java.util.ArrayList;
@@ -7,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import ca.qc.cgmatane.informatique.todo.modele.Note;
+
+import static android.app.AlarmManager.RTC;
 
 public class NoteDAO {
 
